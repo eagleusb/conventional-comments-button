@@ -1,0 +1,48 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+
+#semanticButtonContainer {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  height: 60px;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+#semanticButtonContainer:hover {
+  width: 300px;
+}
+
+#semanticButtonContainer .buttonContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+#semanticButtonContainer .buttonContainer:hover {
+  height: 60px;
+}
+
+#semanticButtonContainer button {
+  margin-right: 0.5rem;
+  border: none;
+  height: 25px;
+  width: 25px;
+  outline: 0;
+}
+
+#semanticButtonContainer button:focus {
+  outline: 0;
+}
+
+#semanticButtonContainer button i.blocking {
+  color: red;
+}
