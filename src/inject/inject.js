@@ -89,23 +89,12 @@ const addSemanticButton = (element) => {
   parent.appendChild(container);
 };
 
-const main = () => {
-  document.addEventListener("click", (e) => {
-    if (
+document.addEventListener("click", (e) => {
+  if (
       e.target.id === "note_note" &&
       !e.target.dataset.semanticButtonInitialized
-    ) {
-      e.target.dataset.semanticButtonInitialized = true;
-      addSemanticButton(e.target);
-    }
-  });
-};
-
-chrome.extension.sendMessage({}, (response) => {
-  const readyStateCheckInterval = setInterval(() => {
-    if (document.readyState === "complete") {
-      clearInterval(readyStateCheckInterval);
-      main();
-    }
-  }, 10);
+  ) {
+    e.target.dataset.semanticButtonInitialized = true;
+    addSemanticButton(e.target);
+  }
 });

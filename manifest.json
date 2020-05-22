@@ -10,16 +10,13 @@
     "128": "icons/icon128.png"
   },
   "default_locale": "en",
-  "background": {
-    "scripts": ["src/bg/background.js"],
-    "persistent": true
-  },
   "permissions": ["https://gitlab.com/*"],
   "content_scripts": [
     {
       "matches": ["https://gitlab.com/*"],
       "js": ["src/inject/inject.js"],
-      "css": ["src/inject/inject.css"]
+      "css": ["src/inject/inject.css"],
+      "run_at": "document_idle"
     }
   ]
 }
