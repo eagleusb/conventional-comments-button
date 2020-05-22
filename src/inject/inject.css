@@ -1,8 +1,4 @@
-/**
- * Place your custom CSS styles here.
- **/
-
-#semanticButtonContainer {
+#conventionalCommentButtonContainer {
   display: flex;
   align-items: flex-end;
   position: absolute;
@@ -11,29 +7,29 @@
   opacity: 0;
   width: 25px;
   height: 60px;
-  transition: all 0.5s;
+  transition: all 0.3s;
   overflow: hidden;
 }
 
-#semanticButtonContainer:hover {
+#conventionalCommentButtonContainer:hover {
   width: 300px;
   opacity: 1;
 }
 
-#semanticButtonContainer .buttonContainer {
+#conventionalCommentButtonContainer .buttonContainer {
   display: flex;
   flex-direction: column-reverse;
   height: 25px;
   width: 25px;
   overflow: hidden;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
-#semanticButtonContainer .buttonContainer:hover {
+#conventionalCommentButtonContainer .buttonContainer:hover {
   height: 60px;
 }
 
-#semanticButtonContainer button {
+#conventionalCommentButtonContainer button {
   margin-right: 0.5rem;
   border: none;
   height: 25px;
@@ -41,10 +37,10 @@
   outline: 0;
 }
 
-#semanticButtonContainer button:focus {
+#conventionalCommentButtonContainer button:focus {
   outline: 0;
 }
 
-#semanticButtonContainer button i.blocking {
+#conventionalCommentButtonContainer button i.blocking {
   color: red;
 }

@@ -42,7 +42,7 @@ const semanticButtonClickHandler = (e, { textarea, label, blocking }) => {
   const semanticComment = semanticCommentStructure
     .replace("%label", label)
     .replace("%decoration", blocking ? "" : " (non-blocking)");
-  if (textarea.value && !textarea.value.includes(":** <subject>")) {
+  if (textarea.value && !textarea.value.endsWith(":** <subject>")) {
     if (
       window.confirm("Are you sure you want to replace the current comment?")
     ) {
@@ -81,7 +81,7 @@ const buttonPairGenerator = (textarea, parent, label) => {
 const addSemanticButton = (element) => {
   const parent = element.closest("div");
   const container = document.createElement("div");
-  container.id = "semanticButtonContainer";
+  container.id = "conventionalCommentButtonContainer";
 
   Object.keys(semanticLabels).forEach((label) => {
     buttonPairGenerator(element, container, label);
