@@ -8,7 +8,7 @@ This is a tiny extension that adds a conventional comment button to GitLab file 
 
 ## How to install
 
-First, clone this repo `git clone git@gitlab.com:conventionalcomments/conventional-comment-button.git` and then see below for browser specific instructions.
+First, clone this repo `git clone git@gitlab.com:conventionalcomments/conventional-comments-button.git` and then see below for browser specific instructions.
 
 ### Chrome
 
