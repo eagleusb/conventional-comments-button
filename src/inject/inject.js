@@ -31,23 +31,27 @@ const semanticLabels = {
 
 const semanticCommentStructure = `**%label%decoration:** <subject>`;
 
-const fillTextAreaValue = (textarea, value) => {
+const fillTextAreaValue = (textarea, value, emptySubject = true) => {
   textarea.value = value;
   textarea.focus();
-  textarea.setSelectionRange(textarea.value.length - 9, textarea.value.length);
+
+  const length = textarea.value.length
+
+  if (emptySubject) {
+    textarea.setSelectionRange(length - 9, length);
+  }
 };
 
 const semanticButtonClickHandler = (e, { textarea, label, blocking }) => {
   e.preventDefault();
+  const decoration = blocking ? "" : " (non-blocking)";
   const semanticComment = semanticCommentStructure
     .replace("%label", label)
-    .replace("%decoration", blocking ? "" : " (non-blocking)");
-  if (textarea.value && !textarea.value.endsWith(":** <subject>")) {
-    if (
-      window.confirm("Are you sure you want to replace the current comment?")
-    ) {
-      fillTextAreaValue(textarea, semanticComment);
-    }
+    .replace("%decoration", decoration);
+  const cleanedValue = textarea.value.replace(/\*\*\w+(\s\(non-blocking\))?:\*\*\s?/, '');
+
+  if (cleanedValue && cleanedValue !== "<subject>") {
+    fillTextAreaValue(textarea, semanticComment.replace(":** <subject>", `:** ${cleanedValue}`), false)
   } else {
     fillTextAreaValue(textarea, semanticComment);
   }
