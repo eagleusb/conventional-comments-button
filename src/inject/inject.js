@@ -91,7 +91,7 @@ const addSemanticButton = (element) => {
 
 document.addEventListener("click", (e) => {
   if (
-      e.target.id === "note_note" &&
+      (e.target.id === "note_note" || e.target.id === "note-body") &&
       !e.target.dataset.semanticButtonInitialized
   ) {
     e.target.dataset.semanticButtonInitialized = true;
