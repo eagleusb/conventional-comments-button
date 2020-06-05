@@ -18,11 +18,5 @@
       "css": ["src/inject/inject.css"],
       "run_at": "document_idle"
     }
-  ],
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "conventionalcomments@gitlab.com",
-      "strict_min_version": "48.0"
-    }
-  }
+  ]
 }
